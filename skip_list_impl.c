@@ -2,7 +2,7 @@
 #include<stdlib.h>
 #include"skip_list.h"
 
-#define SKIPLIST_MAX_LEVEL 6
+#define SKIPLIST_MAX_LEVEL 8
 #define MAX_INT 100000
 
 /*Function to allocate memory to and initialise a NODE*/

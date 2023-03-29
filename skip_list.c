@@ -5,55 +5,45 @@ int main() {
     SKIP_LIST *pl = create_skip_list();
 
     int choice;
+    int ele;
 
-    printf("Please select an option :\n");
+    printf("\nPlease select an option :\n");
     printf("1. Insert elements (Will be automatically added)\n");
     printf("2. Search for an element\n");
     printf("3. Display list\n");
+    printf("4. Exit\n");
 
     scanf("%d", &choice);
 
-    switch(choice) {
-        case 1:
-            for(int i = 1; i <= 30; i++) {
-                insert_element(pl, i, i);
-            }
-    }
+    do {
+        switch(choice) {
+            case 1:
+                for(int i = 1; i <= 30; i++) {
+                    insert_element(pl, i, i);
+                }
+                break;
+            case 2:
+                printf("Enter the element to search for : ");
+                scanf("%d", &ele);
+                if(search_element(pl,ele) == 1) {
+                    printf("Element present in list\n");
+                } else {
+                    printf("Element not in list\n");
+                }
+                break;
+            case 3:
+                display_list(pl);
+                break;
+            case 4:
+                delete_list(pl);
+                return 0;
+        }
+        printf("\nPlease select an option :\n");
+        printf("1. Insert elements (Will be automatically added)\n");
+        printf("2. Search for an element\n");
+        printf("3. Display list\n");
+        printf("4. Exit\n");
 
-    insert_element(pl, 3, 3);
-    insert_element(pl, 1, 1);
-    insert_element(pl, 2, 2);
-    insert_element(pl, 5, 5);
-    insert_element(pl, 4, 4);
-
-    insert_element(pl, 7, 7);
-    insert_element(pl, 8, 8);
-    insert_element(pl, 6, 6);
-    insert_element(pl, 9, 9);
-    insert_element(pl, 10, 10);
-
-    insert_element(pl, 11, 11);
-    insert_element(pl, 12, 12);
-    insert_element(pl, 13, 13);
-    insert_element(pl, 14, 14);
-    insert_element(pl, 15, 15);
-
-    display_list(pl);
-
-    if(search_element(pl,10) == 1) {
-        printf("Element found\n");
-    } else {
-        printf("Element not found\n");
-    }
-
-    if(search_element(pl,20) == 1) {
-        printf("Element found\n");
-    } else {
-        printf("Element not found\n");
-    }
-
-
-    delete_list(pl);
-
-    return 0;
+        scanf("%d", &choice);
+    }while(choice < 5);
 }
