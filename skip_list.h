@@ -18,7 +18,5 @@ int search_element(SKIP_LIST *pl, int key);
 void display_list(SKIP_LIST *pl);
 void delete_list(SKIP_LIST *pl);
 int randomlevel();
-
 void destroy_node(NODE *p);
 
-int delete_element(SKIP_LIST *pl, int key);
