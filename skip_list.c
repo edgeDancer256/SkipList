@@ -25,6 +25,7 @@ int main() {
             case 2:
                 printf("Enter the element to search for : ");
                 scanf("%d", &ele);
+                
                 if(search_element(pl,ele) == 1) {
                     printf("Element present in list\n");
                 } else {
