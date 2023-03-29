@@ -149,4 +149,6 @@ void destroy_node(NODE *p) {
     }
 }
 
+
+/*Not Implemented*/
 int delete_element(SKIP_LIST *pl, int key);
